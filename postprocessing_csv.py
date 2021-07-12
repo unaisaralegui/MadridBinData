@@ -10,7 +10,9 @@ def update_data(existing_data, new_data_path):
         max_date = existing_data['fecha'].max()
     else:
         max_date = None
+    print('reading new data')
     new_dataf = pd.read_csv(new_data_path, encoding='iso-8859-1')
+    print('read')
     if max_date is not None:
         new_dataf_filtered = new_dataf.loc[new_dataf['fecha'] > max_date]
     else: 
@@ -22,6 +24,7 @@ def update_data(existing_data, new_data_path):
 if __name__ == "__main__":
     filename = 'data.csv'
     new_data_path = sys.argv[1]
+    print('Running postprocess script...')
     try:
         existing_data = pd.read_csv(filename)
     except:

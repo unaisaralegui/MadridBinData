@@ -11,7 +11,10 @@ def update_data(existing_data, new_data_path):
     else:
         max_date = None
     print('reading new data')
-    new_dataf = pd.read_csv(new_data_path, encoding='iso-8859-1')
+    try:
+        new_dataf = pd.read_csv(new_data_path, encoding='iso-8859-1')
+    except Exception as ex:
+        print(f'There was an error when getting dataframe, {ex}')
     print('read')
     if max_date is not None:
         new_dataf_filtered = new_dataf.loc[new_dataf['fecha'] > max_date]

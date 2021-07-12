@@ -18,6 +18,7 @@ def update_data(existing_data, new_data_path):
         new_dataf_filtered = new_dataf.loc[new_dataf['fecha'] > max_date]
     else: 
         new_dataf_filtered = new_dataf
+    new_dataf_filtered = new_dataf_filtered.sort_values(by=['fecha'])
     return new_dataf_filtered
 
 

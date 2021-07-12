@@ -1,7 +1,7 @@
 name: data
 on:
   schedule:
-    - cron: "59 23 * * *"
+    - cron: 59 23 * * *
   workflow_dispatch: {}
   push:
     paths:
@@ -18,6 +18,6 @@ jobs:
       - name: Fetch data
         uses: githubocto/flat@v2
         with:
-          http_url: https://datos.madrid.es/datosabiertos/PAPELERASCOMPACTADAS/PAP_MAD_DA.json
-          downloaded_filename: new_data.json
+          http_url: https://datos.madrid.es/egob/catalogo/300461-1-papeleras.csv
+          downloaded_filename: new_data.csv
           postprocess: ./postprocess.ts

@@ -12,7 +12,7 @@ def update_data(existing_data, new_data_path):
         max_date = None
     print('reading new data')
     try:
-        new_dataf = pd.read_csv(new_data_path, encoding='iso-8859-1')
+        new_dataf = pd.read_csv(new_data_path, encoding='iso-8859-1', sep=';')
     except Exception as ex:
         print(f'There was an error when getting dataframe, {ex}')
     print('read')

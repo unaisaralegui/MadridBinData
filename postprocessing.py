@@ -11,7 +11,7 @@ def update_data(existing_data, new_data_path):
     else:
         max_date = None
     with open(new_data_path, 'r') as f:
-        new_data = json.load(new_data_path)
+        new_data = json.load(f)
     new_dataf = pd.DataFrame(new_data['papeleras'])
     if max_date is not None:
         new_dataf_filtered = new_dataf.loc[new_dataf['fecha'] > max_date]

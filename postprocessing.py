@@ -1,3 +1,4 @@
+import sys
 import requests
 import pandas as pd
 
@@ -24,6 +25,7 @@ def update_data(existing_data, new_data_link):
 if __name__ == "__main__":
     filename = 'data.csv'
     link = 'https://datos.madrid.es/datosabiertos/PAPELERASCOMPACTADAS/PAP_MAD_DA.json'
+    print("argv :", sys.argv)
     try:
         existing_data = pd.read_csv(filename)
     except:
